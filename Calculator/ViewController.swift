@@ -192,11 +192,16 @@ class ViewController: UIViewController {
         if tag == 1 {
             debugPrint("equals")
             if let operation = currentOperations {
+                debugPrint("first number")
+                debugPrint(firstNumber)
                 var secondNumber = 0
                 if let text = resultLabel.text, let value = Int(text) {
                     secondNumber = value
                     resultLabel.text = "0"
                 }
+                
+                debugPrint("second number")
+                debugPrint(secondNumber)
                 switch operation {
                     
                 case .add:
@@ -227,23 +232,27 @@ class ViewController: UIViewController {
             }
             
             
-            
         }
         else if tag == 2 {
             debugPrint("add")
             currentOperations = .add
+            resultLabel.text = "0"
         }
         else if tag == 3 {
             debugPrint("subtract")
             currentOperations = .subtract
+            resultLabel.text = "0"
+
         }
         else if tag == 4 {
             debugPrint("multiply")
             currentOperations = .multiply
+            resultLabel.text = "0"
         }
         else if tag == 5 {
             debugPrint("divide")
             currentOperations = .divide
+            resultLabel.text = "0"
             
         }
         
@@ -262,6 +271,7 @@ class ViewController: UIViewController {
             
         if tag == 1 {
             resultLabel.text = "0"
+            firstNumber = 0
         }
         else if tag == 2 {
             let result = integervalue * -1
